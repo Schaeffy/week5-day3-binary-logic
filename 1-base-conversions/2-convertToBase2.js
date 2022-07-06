@@ -3,7 +3,11 @@
 /******************************************************************************/
 
 const convertToBase2 = element => {
-  // Your code here
+  if(Number.isInteger(element)){
+    return  `0b${element.toString(2)}`;
+  }
+    let dec = parseInt(element.substring(2), 16);
+    return  `0b${dec.toString(2)}`;
 };
 
 /******************************************************************************/
