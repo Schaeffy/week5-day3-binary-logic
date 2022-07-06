@@ -22,8 +22,19 @@ const binaryStringToArray = str => {
 };
 
 const binaryToAscii = str => {
-  // Your code here
+
+  let strArr = binaryStringToArray(str)
+  let outputStr = ''
+
+  for(let i = 0; i < strArr.length; i++) {
+    outputStr += String.fromCharCode(`0b${strArr[i]}`)
+  }
+  return outputStr
 };
+
+
+//One liner
+return binaryStringToArray(str).map((char) => String.fromCharCode('0b'+ char)).join('')
 
 /******************************************************************************/
 
