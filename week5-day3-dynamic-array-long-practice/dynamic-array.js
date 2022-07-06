@@ -48,13 +48,22 @@ class DynamicArray {
   }
 
   indexOf (val) {
-
+    for(let idx = 0; idx < this.length; idx++) {
+      if(val === this.data[idx]){
+        return idx;
+      }
+    }
+    return -1;
   }
 
   resize () {
-
+    this.capacity *= 2;
+    let newArr = new Array(this.capacity);
+    for(let idx = 0; idx < this.length; idx++) {
+      newArr[idx] = this.data[idx];
+    }
+    this.data = newArr;
   }
-
 }
 
 
